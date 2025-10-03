@@ -310,8 +310,9 @@ article{
             text-align: center;
             transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
             width: 350px;
+            align-items: center;
 
-            :hover {
+            &:hover {
                 transform: translateY(-5px);
                 box-shadow: rgba(160, 100, 60, 0.3) 12px 12px, 
                         rgba(160, 100, 60, 0.2) 20px 20px, 
@@ -322,14 +323,14 @@ article{
 
             img {
                 width: 100px;
-                height: auto;
                 margin-bottom: 20px;
+                border-radius: 10%;
+
             }
 
             h3 {
                 font-size: 22px;
                 color: rgba(111, 53, 37, 0.9);
-                margin-bottom: 15px;
                 text-transform: uppercase;
             }
         }
@@ -375,8 +376,21 @@ footer{
     }
     
     #languages {
-        display: flex;
-        flex-direction: column;
+        
+        h2 {
+            font-size: 28px;
+        }
+
+        .cards-container {
+            grid-template-columns: 1fr ;
+            gap: 30px;
+            padding: 10px;
+
+            .language-card {
+                width: 90vw;
+                padding: 20px;
+            }
+        }
     }
 } 
 
