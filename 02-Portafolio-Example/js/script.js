@@ -109,3 +109,100 @@ const IsAnagram = (word1, word2) => {
 
 IsAnagram('roma', 'amor');
 IsAnagram('roma', 'carro');
+
+
+//CALLBACKS HELL
+// Un callback es una función que se pasa como argumento a otra función
+// y se ejecuta dentro de esa función.
+const otraFuncion = () => {
+    console.log('Función 2 ejecutada');
+}
+
+const funcion1 = (otraFuncion) => {
+    setTimeout(() => {
+        console.log('Función 1 ejecutada');
+        otraFuncion();
+    }, 5000);
+}
+
+console.log(funcion1(otraFuncion));
+
+//EJEMPLO DE CALLBACK HELL
+// const hacerPiza = () => {
+//     const masa = () => {
+//         const hornear = () => {
+//             const decorar = () => {
+//             }   
+//         }
+//     }
+// }
+
+// Promesas. Las promesas son una forma de manejar operaciones asincrónicas en JavaScript.
+// Una promesa representa un valor que puede estar disponible ahora, en el futuro o nunca.
+
+const promesa = new Promise((resolve, reject) => {
+    const exito = true;
+    if (exito) {
+        resolve('La promesa se cumplió');
+    } else {
+        reject('La promesa se rechazó');
+    }
+});
+
+promesa
+    .then((resultado) => {
+        console.log(resultado);
+    })
+    .catch((err) => {
+        console.log(err);
+    }); 
+
+
+const funcionAsincrona = async (promesa) => {
+    try {
+        const resultado = await promesa;
+        console.log(`Resultado: ${resultado}`);
+    } catch (error) {
+        console.log(`Error: ${error}`);
+    }
+}
+
+funcionAsincrona(promesa);
+
+
+
+const body = document.querySelector('body header nav a');
+const languageCard = document.querySelector('.language-card');
+const sectionId = document.getElementById('languages');
+
+// const body2 = document.getElementsByTagName('body');
+// const byid = document.getElementById('byid');
+// const byclass = document.getElementsByClassName('byclass');
+// const byname = document.getElementsByName('byname');
+
+console.log(body);
+console.log(languageCard);
+console.log(sectionId);
+
+
+const buttons = document.querySelectorAll('.language-card button');
+const languageCards = document.querySelectorAll('.language-card');
+console.log(buttons);
+
+console.log(languageCards);
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const targetId = button.dataset.id;
+    console.log(targetId);
+
+    languageCards.forEach((card) => {
+      if (card.dataset.id === targetId) {
+        card.classList.toggle('active-card');
+      } else {
+        card.classList.remove('active-card');
+      }
+    });
+  });
+});
+
