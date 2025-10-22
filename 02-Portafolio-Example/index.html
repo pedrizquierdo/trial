@@ -7,7 +7,7 @@
     <meta name="author" content="Pedro Izquierdo">
     <meta name="keywords" content="portafolio, aplicaciones web, proyectos, desarrollo web, resumen, HTML, CSS">
     <link rel="stylesheet" href="css/styles.css">
-    <script defer src="js/script.js"></script>
+    <script type="module" src="js/main.js"></script>
     <title>Pedro Izquierdo | Portafolio</title>
 </head>
 <body>
@@ -17,7 +17,12 @@
                     <span class="name">Pedro Izquierdo /</span> 
                     <span>Desarrollador Web</span>
                 </h2>
-                <a href="http://">Contacto</a>
+                <a href="#about-me" data-section="about-me">Inicio</a>
+                <a href="#contacto" data-section="contacto">Contacto</a>
+                <select name="theme" id="theme">
+                    <option value="light">Light Mode</option>
+                    <option value="dark">Dark Mode</option>
+                </select>
         </nav>
     </header>
     <main>
@@ -83,6 +88,24 @@
                     <button data-id="3">Ver Proyecto</button>
                 </div>
             </div>
+        </section>
+        <section id="contacto">
+            <form role="form" id="" class="" action="" aria-label="Formulario de contacto">
+                <h2>Contacto</h2>
+                <div>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" placeholder="Escribe tu nombre aqui." required>
+                </div>
+                <div>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
         </section>
     </main>
     <footer>

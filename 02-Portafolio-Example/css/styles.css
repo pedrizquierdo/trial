@@ -1,6 +1,14 @@
 :root {
   --primary-color: #A63D2E;
   --secondary-color: #FFD23F;
+  --background-color: #FFF5E4;
+  --font-family: 'SF Pro Text', sans-serif;
+}
+
+.dark-theme {
+  --primary-color: #E08C7C;
+  --secondary-color: #4A90E2;
+  --background-color: #1C1C1E;
   --font-family: 'SF Pro Text', sans-serif;
 }
 
@@ -12,6 +20,7 @@
 
 body {
   font-family: var(--font-family);
+  background: var(--background-color);
 }
 
 #menu {
@@ -338,6 +347,26 @@ main {
       }
     }
   }
+  form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 400px;
+  margin: 0 auto;
+  padding: 80px 0;
+
+    button{
+      width: 150px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      margin: 0 auto;
+    }
 }
 
 footer {
@@ -389,4 +418,5 @@ footer {
       }
     }
   }
+}
 }

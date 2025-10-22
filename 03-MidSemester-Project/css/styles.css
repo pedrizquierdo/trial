@@ -5,8 +5,20 @@
   --azul-triste: #3A506B;       
   --rosa-neon: #D72638;         
   --blanco-sucio: #E0E0E0;       
-  --gris-plata: #A0A0A0;         
+  --gris-plata: #A0A0A0;
+  --blanco-brillante: #FFFFFF;
   --font-family: 'SF Pro Display', sans-serif;
+}
+
+.dark-theme {
+  --negro-profundo: #E0E0E0;
+  --gris-humo: #FFFFFF;
+  --morado-melancolia: #6A0DAD;
+  --azul-triste: #3A506B;
+  --rosa-neon: #D72638;
+  --blanco-sucio: #0D0D0D;
+  --gris-plata: #A0A0A0;
+  --blanco-brillante: #000000;
 }
 
 * {
@@ -17,6 +29,8 @@
 
 body {
     font-family: var(--font-family);
+    color: var(--negro-profundo);
+    transition: background-color 0.4s ease, color 0.4s ease;
 
 }
 
@@ -28,13 +42,30 @@ body {
         padding: 1rem;
         z-index: 2;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
+        background-color: var(--gris-plata);
+        color: var(--negro-profundo);
+        transition: background-color 0.4s ease, color 0.4s ease;
+        
         nav {
             display: flex;
             justify-content: space-between;
             height: 50px;
             padding: 0 10px 0 0px;
             align-items: center;
+
+            select {
+                background: transparent;
+                border: 1px solid var(--gris-plata);
+                color: var(--negro-profundo);
+                padding: 5px 10px;
+                border-radius: 5px;
+
+                option {
+                    background: var(--gris-humo);
+                    color: var(--negro-profundo);
+                }
+            }
+            
 
             h1{
 
@@ -86,8 +117,8 @@ body {
                 align-items: center;
                 justify-items: center;
                 min-height: 100vh;
-                background: #E0E0E0;
-                background: linear-gradient(0deg,rgba(224, 224, 224, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                background: var(--blanco-sucio);
+                background: linear-gradient(0deg,var(--blanco-sucio) 0%, var(--blanco-brillante) 100%);
                 
                 .hero-image {
                     width: 90%;
@@ -152,6 +183,7 @@ body {
                 text-align: center;
                 min-height: 80vh;
                 justify-content: center;
+                background: var(--blanco-brillante);
                 
 
                 h2 {
@@ -176,7 +208,8 @@ body {
                         width: 450px;
                         height: 250px;
                         border-radius: 20px;
-                        background-color: var(--blanco-sucio);
+                        background-color: var(--gris-plata);
+                        color: var(--negro-profundo);
                         padding: 20px;
                         box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
                         transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -284,6 +317,8 @@ body {
         padding: 1rem 2rem;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         background-color: var(--blanco-sucio);
+        color: var(--negro-profundo);
+        transition: background-color 0.4s ease, color 0.4s ease;
 
 
         .icons {

@@ -206,3 +206,34 @@ buttons.forEach((button) => {
   });
 });
 
+// Guardar un texto simple
+localStorage.setItem("nombre", "Pedro");
+
+// Leerlo
+let nombreGuardado = localStorage.getItem("nombre");
+console.log(nombreGuardado);
+
+// Borrar un item
+localStorage.removeItem("nombre");
+
+// Borrar todo
+localStorage.clear();
+
+
+let usuario = {
+  nombre: "Pedro",
+  edad: 20
+};
+
+// Convertir objeto a string y guardar
+localStorage.setItem("usuario", JSON.stringify(usuario));
+
+// Leerlo y convertir de nuevo a objeto
+let usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
+console.log(usuarioGuardado.nombre); // "Pedro"
+
+// Borrar un item
+localStorage.removeItem("usuario");
+
+// Borrar todo
+localStorage.clear();
